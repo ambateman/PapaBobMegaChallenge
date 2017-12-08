@@ -7,31 +7,9 @@ namespace PapaBobMegaChallenge
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack) recalculateTotalCost(sender,e);
         }
-          /*  Trash test code
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-            var order = new PapaBob.DTO.OrderDTO();
-            order.Id = Guid.NewGuid();
-            order.Size = PapaBob.DTO.Enums.SizeType.Large;
-            order.Crust = PapaBob.DTO.Enums.CrustType.Thick;
-            order.Pepperoni = true;
-            order.Name = "Ju Da-Ha";
-            order.Address = "123 Tayeon Dr";
-            order.PhoneNumber = "555-555-5555";
-            order.TotalCost = 19.9500m;
-            order.Sausage = true;
-            order.ZipCode = "12345";
-            order.PaymentType = PapaBob.DTO.Enums.PaymentType.Credit;
-
-
-
-            PapaBob.Domain.OrderManager.CreateOrder(order);
-        }
-        */
-
+         
         protected void btnOrder_Click(object sender, EventArgs e)
         {
 
@@ -83,8 +61,8 @@ namespace PapaBobMegaChallenge
             if (listSizes.SelectedValue == String.Empty) return;
             if (listCrusts.SelectedValue == String.Empty) return;
             var order = buildOrder();
-            PapaBob.Domain.
-            
+            this.lblTotal.Text = String.Format("{0:c}",PapaBob.Domain.OrderManager.CalculatePizzaPrice(order));
+       
             
             
 
