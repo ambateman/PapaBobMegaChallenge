@@ -20,7 +20,7 @@ namespace PapaBob.Domain
         {
             decimal cost = 0.0m;
             var prices = getPizzaPrices();
-            cost += calculateSizeCost(order,prices);
+            cost += calculateSizeCost(order, prices);
             cost += calculatCrustCost(order, prices);
             cost += calculateToppings(order, prices);
             return cost;
@@ -76,8 +76,23 @@ namespace PapaBob.Domain
                 default:
                     break;
             }
-           return cost;
+            return cost;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
