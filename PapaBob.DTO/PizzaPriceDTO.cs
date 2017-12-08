@@ -10,17 +10,16 @@ namespace PapaBob.DTO
     {
 
         public int Id { get; set; }
-        public decimal small { get; set; }
-        public decimal medium { get; set; }
-        public decimal large { get; set; }
-        public decimal thin { get; set; }
-        public decimal regular { get; set; }
-        public decimal thick { get; set; }
-        public decimal sausage { get; set; }
-        public decimal pepperoni { get; set; }
-        public decimal onions { get; set; }
-        public decimal greenpeppers { get; set; }
-
+        public decimal Small { get; set; }
+        public decimal Medium { get; set; }
+        public decimal Large { get; set; }
+        public decimal Thick { get; set; }
+        public decimal Thin { get; set; }
+        public decimal Regular { get; set; }
+        public decimal Sausage { get; set; }
+        public decimal Pepperoni { get; set; }
+        public decimal GreenPeppers { get; set; }
+        public decimal Onions { get; set; }
 
     }
 }

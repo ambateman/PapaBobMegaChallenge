@@ -20,16 +20,16 @@ namespace PapaBob.Persistence
         {
             var dto = new DTO.PizzaPriceDTO();
 
-            dto.small = pizzaPrice.Small;
-            dto.medium = pizzaPrice.Medium;
-            dto.large = pizzaPrice.Large;
-            dto.thin = pizzaPrice.Thin;
-            dto.regular = pizzaPrice.Regular;
-            dto.thick = pizzaPrice.Thick;
-            dto.sausage = pizzaPrice.Sausage;
-            dto.pepperoni = pizzaPrice.Pepperoni;
-            dto.onions = pizzaPrice.Onions;
-            dto.greenpeppers = pizzaPrice.GreenPeppers;
+            dto.Small = pizzaPrice.Small;
+            dto.Medium = pizzaPrice.Medium;
+            dto.Large = pizzaPrice.Large;
+            dto.Thin = pizzaPrice.Thin;
+            dto.Regular = pizzaPrice.Regular;
+            dto.Thick = pizzaPrice.Thick;
+            dto.Sausage = pizzaPrice.Sausage;
+            dto.Pepperoni = pizzaPrice.Pepperoni;
+            dto.Onions = pizzaPrice.Onions;
+            dto.GreenPeppers = pizzaPrice.GreenPeppers;
 
             return dto;
 

@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label>Size: </label>
-                <asp:DropDownList ID="listSizes" runat="server" CssClass="form-control" AutoPostBack="true">
+                <asp:DropDownList ID="listSizes" runat="server" CssClass="form-control" AutoPostBack="true" OnSeletedIndexChanged="recalculateTotalCost">
                     <asp:ListItem Text="Choose a size ..." Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Small (12 inch - $12)" Value="Small"></asp:ListItem>
                     <asp:ListItem Text="Medium (14 inch - $14)" Value="Medium"></asp:ListItem>
@@ -25,20 +25,20 @@
              </div>
             <div class="form-group">
                 <label>Crust: </label>
-                <asp:DropDownList ID="listCrusts" runat="server" CssClass="form-control" AutoPostBack="true">
+                <asp:DropDownList ID="listCrusts" runat="server" CssClass="form-control" AutoPostBack="true" OnSeletedIndexChanged="recalculateTotalCost">
                     <asp:ListItem Text="Choose a crust style ..." Selected="True"></asp:ListItem>
                     <asp:ListItem Text="Thin" Value="Thin"></asp:ListItem>
                     <asp:ListItem Text="Regular" Value="Regular"></asp:ListItem>
                     <asp:ListItem Text="Thick (+ $2)" Value="Thick"></asp:ListItem>
                 </asp:DropDownList>
             </div>
-            <div class="checkbox"><label><asp:CheckBox ID="chkSausage" runat="server"  AutoPostBack="true"/> Sausage </label></div>
+            <div class="checkbox"><label><asp:CheckBox ID="chkSausage" runat="server"  AutoPostBack="true" onChange="recalculateTotalCost"/> Sausage </label></div>
                        
-            <div class="checkbox"><label><asp:CheckBox ID="chkPepperoni" runat="server"  AutoPostBack="true"/> Pepperoni </label> </div>
+            <div class="checkbox"><label><asp:CheckBox ID="chkPepperoni" runat="server"  AutoPostBack="true" onChange="recalculateTotalCost"/> Pepperoni </label> </div>
             
-            <div class="checkbox"><label><asp:CheckBox ID="chkOnions" runat="server"  AutoPostBack="true"/> Onions </label> </div>
+            <div class="checkbox"><label><asp:CheckBox ID="chkOnions" runat="server"  AutoPostBack="true" onChange="recalculateTotalCost"/> Onions </label> </div>
 
-            <div class="checkbox"><label><asp:CheckBox ID="chkGreenPeppers" runat="server" AutoPostBack="true" /> Green Peppers </label> </div>
+            <div class="checkbox"><label><asp:CheckBox ID="chkGreenPeppers" runat="server" AutoPostBack="true" onChange="recalculateTotalCost"/> Green Peppers </label> </div>
            
             <h3>Deliver To:</h3>
 

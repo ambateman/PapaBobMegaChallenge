@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using PapaBob.Domain;
-using PapaBob.DTO;
 using PapaBob.DTO.Enums;
 
 namespace PapaBobMegaChallenge
@@ -16,7 +9,7 @@ namespace PapaBobMegaChallenge
         {
 
         }
-          /*
+          /*  Trash test code
         protected void Button1_Click(object sender, EventArgs e)
         {
 
@@ -41,25 +34,8 @@ namespace PapaBobMegaChallenge
 
         protected void btnOrder_Click(object sender, EventArgs e)
         {
-            var order = new PapaBob.DTO.OrderDTO();
- 
-            order.Size = determineSize();
-            order.Crust = determineCrust();
-            order.Pepperoni = chkPepperoni.Checked;
-            order.Sausage = chkSausage.Checked;
-            order.Onions = chkOnions.Checked;
-            order.Green_Peppers = chkGreenPeppers.Checked;
-            order.Name = textName.Text.ToString();
-            order.Address = textAddress.Text.ToString();
-            order.PhoneNumber = textPhone.Text.ToString();
-            order.ZipCode = textZip.Text.ToString();
-            order.TotalCost = 19.9500m;
 
-            order.PaymentType = determinePaymentType();
-   
-
-            order.PaymentType = PapaBob.DTO.Enums.PaymentType.Credit;
-
+            var order = buildOrder();
             PapaBob.Domain.OrderManager.CreateOrder(order);
 
 
@@ -100,6 +76,37 @@ namespace PapaBobMegaChallenge
                 throw new Exception("Could not determine pizza crust type");
             }
             return crust;
+        }
+
+        protected void recalculateTotalCost(object Sender, EventArgs e)
+        {
+            if (listSizes.SelectedValue == String.Empty) return;
+            if (listCrusts.SelectedValue == String.Empty) return;
+            var order = buildOrder();
+           PapaBob.Domain.
+            
+            
+            
+
+        }
+
+
+        private PapaBob.DTO.OrderDTO buildOrder()
+        {
+            var order = new PapaBob.DTO.OrderDTO();
+            order.Size = determineSize();
+            order.Crust = determineCrust();
+            order.Pepperoni = chkPepperoni.Checked;
+            order.Sausage = chkSausage.Checked;
+            order.Onions = chkOnions.Checked;
+            order.Green_Peppers = chkGreenPeppers.Checked;
+            order.Name = textName.Text.ToString();
+            order.Address = textAddress.Text.ToString();
+            order.PhoneNumber = textPhone.Text.ToString();
+            order.ZipCode = textZip.Text.ToString();
+            order.TotalCost = 0m;
+            order.PaymentType = determinePaymentType();
+            return order;
         }
 
 
