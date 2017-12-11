@@ -7,7 +7,7 @@ namespace PapaBobMegaChallenge
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack) recalculateTotalCost(sender,e);
+             recalculateTotalCost(sender,e);
         }
          
         protected void btnOrder_Click(object sender, EventArgs e)

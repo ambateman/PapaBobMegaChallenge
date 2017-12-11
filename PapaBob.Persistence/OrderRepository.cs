@@ -71,7 +71,7 @@ namespace PapaBob.Persistence
                     orderDTO.Sausage = order.Sausage;
                     orderDTO.Green_Peppers = order.Green_Peppers;
                     orderDTO.PaymentType = order.PaymentType;
-                    order.TotalCost = order.TotalCost;
+                    orderDTO.TotalCost = order.TotalCost;
                     orderDTO.Completed = order.Completed;
                     orderDTO.Size = order.Size;
                     orderDTO.Crust = order.Crust;
@@ -80,6 +80,14 @@ namespace PapaBob.Persistence
             }
 
             return ordersDTO;
+        }
+
+        public static void CompleteOrder(Guid orderID)
+        {
+            var db = new PapaBobDBEntities();
+            var order = db.Orders.FirstOrDefault(p => p.Id == orderID);
+            order.Completed = true;
+            db.SaveChanges();
         }
     }
 

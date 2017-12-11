@@ -10,7 +10,11 @@
     <form id="form1" runat="server">
         <div>
             <h1>Order Managements</h1>
-            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
+                <Columns>
+                    <asp:ButtonField  Text="Complete" />
+                </Columns>
+            </asp:GridView>
         </div>
     </form>
 </body>

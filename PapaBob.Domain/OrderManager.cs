@@ -99,6 +99,11 @@ namespace PapaBob.Domain
 
 
 
+        public static void CompleteOrder(Guid orderID)
+        {
+            Persistence.OrderRepository.CompleteOrder(orderID);
+
+        }
 
 
 
