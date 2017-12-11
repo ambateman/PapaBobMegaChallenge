@@ -67,6 +67,7 @@
             <p>&nbsp;</p>
 
             <asp:Button ID="btnOrder" runat="server" Text="ORDER" cssclass="btn btn-lg btn-primary" OnClick="btnOrder_Click"/><br />
+            <asp:Label ID="validationLabel" CssClass="bg-danger" runat="server" Text="" Visible="false"></asp:Label>
             <h3>Total Cost: <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label></h3>
         </div>
     </form>

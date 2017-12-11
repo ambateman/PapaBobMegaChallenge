@@ -12,9 +12,48 @@ namespace PapaBobMegaChallenge
          
         protected void btnOrder_Click(object sender, EventArgs e)
         {
+            validationLabel.Visible = false;
+            if(textName.Text.Length == 0)
+            {
+                validationLabel.Text = "Please enter a name";
+                validationLabel.Visible = true;
+                return;
 
-            var order = buildOrder();
-            PapaBob.Domain.OrderManager.CreateOrder(order);
+            }
+            if (textAddress.Text.Length == 0)
+            {
+                validationLabel.Text = "Please enter an address";
+                validationLabel.Visible = true;
+                return;
+
+            }
+            if (textZip.Text.Length == 0)
+            {
+                validationLabel.Text = "Please enter a zip code";
+                validationLabel.Visible = true;
+                return;
+
+            }
+            if (textPhone.Text.Length == 0)
+            {
+                validationLabel.Text = "Please enter a phone number";
+                validationLabel.Visible = true;
+                return;
+
+            }
+
+            try
+            {
+                var order = buildOrder();
+                PapaBob.Domain.OrderManager.CreateOrder(order);
+                Response.Redirect("success.aspx");
+            }
+            catch (Exception)
+            {
+
+
+            }
+
 
 
         }
@@ -61,7 +100,16 @@ namespace PapaBobMegaChallenge
             if (listSizes.SelectedValue == String.Empty) return;
             if (listCrusts.SelectedValue == String.Empty) return;
             var order = buildOrder();
-            this.lblTotal.Text = String.Format("{0:c}",PapaBob.Domain.OrderManager.CalculatePizzaPrice(order));
+            try
+            {
+                this.lblTotal.Text = String.Format("{0:c}", PapaBob.Domain.OrderManager.CalculatePizzaPrice(order));
+            }
+            catch (Exception)
+            {
+
+                //do nothing
+            }
+      
        
             
             
