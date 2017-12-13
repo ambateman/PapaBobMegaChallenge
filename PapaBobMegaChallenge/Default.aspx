@@ -10,10 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div class ="container ">
+            <%-- %>
             <div class="page-header">
                 <h1>Papa Bob's Pizza </h1><br />
                 <p class="lead">Pizza to Code By</p>
-            </div>
+            </div> --%>
             <div class="form-group">
                 <label>Size: </label>
                 <asp:DropDownList ID="listSizes" runat="server" CssClass="form-control" AutoPostBack="true" OnSeletedIndexChanged="">
